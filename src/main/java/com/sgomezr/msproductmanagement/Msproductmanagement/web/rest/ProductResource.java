@@ -38,6 +38,7 @@ public class ProductResource {
     @RequestMapping(value = "product/{idUser}", method = RequestMethod.DELETE)
     public ResponseEntity<List<ProductDTO>> deleteProductsByIdUser(@PathVariable Long idUser){
         List<ProductDTO> productDelete = productService.deleteProductsByUser(idUser);
+        System.out.println("Deleting product...");
         return ResponseEntity.ok(productDelete);
     }
 
